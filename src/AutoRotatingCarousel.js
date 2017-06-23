@@ -98,7 +98,7 @@ const mobileStyles = {
     margin: '0 auto'
   },
   footer: {
-    marginTop: -92,
+    marginTop: -150,
     width: '100%',
     position: 'relative',
     textAlign: 'center'
