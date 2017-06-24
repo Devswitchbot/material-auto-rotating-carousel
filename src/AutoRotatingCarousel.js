@@ -91,14 +91,14 @@ const mobileStyles = {
   },
   content: {},
   dots: {
-    margin: '0 auto'
+    margin: '-10px auto 0 auto'
   },
   dotsLandscape: {
     paddingTop: 20,
     margin: '0 auto'
   },
   footer: {
-    marginTop: -150,
+    marginTop: -135,
     width: '100%',
     position: 'relative',
     textAlign: 'center'
@@ -187,8 +187,8 @@ export default class AutoRotatingCarousel extends Component {
           <div style={landscape ? {minWidth: 300, maxWidth: 'calc(50% - 48px)', padding: 24, float: 'right'} : null}>
             <div style={landscape ? style.footerLandscape : style.footer}>
               <RaisedButton
-                label={this.props.label}
-                onTouchTap={this.props.onStart}
+                label={this.props.labels[this.state.slideIndex]}
+                onTouchTap={() => this.props.onStart(() => this.increaseIndex(), this.state.slideIndex)}
               />
               <Dots
                 count={this.props.children.length}
