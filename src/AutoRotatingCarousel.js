@@ -187,7 +187,7 @@ export default class AutoRotatingCarousel extends Component {
           <div style={landscape ? {minWidth: 300, maxWidth: 'calc(50% - 48px)', padding: 24, float: 'right'} : null}>
             <div style={landscape ? style.footerLandscape : style.footer}>
               <RaisedButton
-                label={this.props.labels[this.state.slideIndex]}
+                label={this.props.labels[this.state.slideIndex % this.props.labels.length]}
                 onTouchTap={() => this.props.onStart(() => this.increaseIndex(), this.state.slideIndex)}
               />
               <Dots
